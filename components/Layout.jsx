@@ -128,9 +128,8 @@ const Layout = ({ title, children }) => {
           </Navbar>
         </header>
         <main>{children}</main>
-        <footer>
-          <Footer />
-        </footer>
+
+        <Footer />
       </div>
     </>
   );

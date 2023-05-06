@@ -3,6 +3,7 @@ import { Card, Input, Button, Typography } from '@material-tailwind/react';
 import Link from 'next/link';
 
 export default function LoginScreen() {
+  // const[email,setEmail] = useState("");
   return (
     <Layout title="Login">
       {' '}

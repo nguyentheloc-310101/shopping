@@ -1,4 +1,5 @@
 import Head from 'next/head';
+import { signOut } from 'next-auth/react';
 import React, { useContext, useState, useEffect } from 'react';
 
 import Footer from './Footer';
@@ -11,11 +12,17 @@ import {
   IconButton,
 } from '@material-tailwind/react';
 import Link from 'next/link';
+import Cookies from 'js-cookie';
 
 const Layout = ({ title, children }) => {
   const { state, dispatch } = useContext(Store);
   const { cart } = state;
   const [cartItemsCount, setCartItemsCount] = useState(0);
+  const logoutClickHandler = () => {
+    Cookies.remove('cart');
+    dispatch({ type: 'CART_RESET' });
+    signOut({ callbackUrl: '/login' });
+  };
   useEffect(() => {
     setCartItemsCount(cart.cartItems.reduce((a, c) => a + c.quantity, 0));
   }, [cart.cartItems]);
@@ -67,6 +74,15 @@ const Layout = ({ title, children }) => {
                     size="sm"
                     className="hidden lg:inline-block">
                     <span>Log In</span>
+                  </Button>
+                </Link>
+                <Link href="/login">
+                  <Button
+                    variant="gradient"
+                    size="sm"
+                    onClick={logoutClickHandler}
+                    className="hidden lg:inline-block">
+                    <span>Log Out</span>
                   </Button>
                 </Link>
                 <IconButton

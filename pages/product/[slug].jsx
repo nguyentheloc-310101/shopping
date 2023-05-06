@@ -8,12 +8,12 @@ import { Store } from '@/ultis/Store';
 import supabase from '@/ultis/supabaseClient';
 import Link from 'next/link';
 
-export const ProductScreen = (props) => {
+export const ProductScreen = () => {
   const { state, dispatch } = useContext(Store);
 
   const [fetchError, setFetchError] = useState(null);
   const [productList, setProductList] = useState(null);
-  const product = props;
+  const [product, setProduct] = useState(null);
   const router = useRouter();
 
   useEffect(() => {
@@ -25,6 +25,7 @@ export const ProductScreen = (props) => {
         console.log(error);
       }
       if (data) {
+        setProduct(data);
         setProductList(data);
         setFetchError(null);
       }
@@ -32,7 +33,7 @@ export const ProductScreen = (props) => {
     fetchData();
   }, []);
   if (!product) {
-    return <Layout title="Produt Not Found">Produt Not Found</Layout>;
+    return <Layout title="Produt Not Found">Product Not Found</Layout>;
   }
 
   const { cart } = state;
@@ -49,7 +50,7 @@ export const ProductScreen = (props) => {
   };
 
   return (
-    <Layout title={product.name}>
+    <Layout title={productList.name}>
       <div className="py-2">
         <Link href="/">back to products</Link>
       </div>

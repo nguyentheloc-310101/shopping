@@ -6,7 +6,6 @@ import supabase from '@/ultis/supabaseClient';
 import { useContext, useEffect, useState } from 'react';
 
 export default function Home() {
-  console.log(supabase);
   const [fetchError, setFetchError] = useState(null);
   const [productList, setProductList] = useState(null);
 

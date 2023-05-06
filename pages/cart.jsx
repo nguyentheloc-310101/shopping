@@ -12,13 +12,16 @@ export const CartScreen = () => {
   const {
     cart: { cartItems },
   } = state;
+
+  /*Delete item in cart*/
   const removeItemHandler = (item) => {
     dispatch({ type: 'CART_REMOVE_ITEM', payload: item });
   };
+
+  /*Update item when change the quantity or delete item*/
   const updateCartHandler = async (item, qty) => {
     const quantity = Number(qty);
     // const { data } = await axios.get(`/api/products/${item._id}`);
-
     dispatch({ type: 'CART_ADD_ITEM', payload: { ...item, quantity } });
     alert('Product updated in the cart');
   };

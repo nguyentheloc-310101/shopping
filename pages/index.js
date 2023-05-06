@@ -1,5 +1,5 @@
+import Layout from '@/components/Layout';
 import ProductItem from '@/components/ProductItem';
-import Layout from '@/components/layout';
 import data from '@/ultis/data';
 
 export default function Home() {

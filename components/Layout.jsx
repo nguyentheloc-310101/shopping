@@ -13,6 +13,8 @@ import {
 } from '@material-tailwind/react';
 import Link from 'next/link';
 import Cookies from 'js-cookie';
+import supabase from '@/ultis/supabaseClient';
+import { useRouter } from 'next/router';
 
 const Layout = ({ title, children }) => {
   const { state, dispatch } = useContext(Store);
@@ -37,6 +39,42 @@ const Layout = ({ title, children }) => {
     );
   }, []);
 
+  // const router = useRouter();
+  const [authenticatedState, setAuthenticatedState] =
+    useState('not-authenticated');
+  // useEffect(() => {
+  //   const { data: authListener } = supabase.auth.onAuthStateChange(
+  //     async (event, session) => {
+  //       console.log(event, session);
+  //       handleAuthChange(event, session);
+  //       if (event === 'SIGNED_IN') {
+  //         setAuthenticatedState('authenticated');
+  //         router.push('/');
+  //       }
+  //       if (event === 'SIGNED_OUT') {
+  //         setAuthenticatedState('not-authenticated');
+  //       }
+  //     }
+  //   );
+  //   checkUser();
+  //   return () => {
+  //     authListener.unsubscribe();
+  //   };
+  // }, []);
+  // async function checkUser() {
+  //   const user = await supabase.auth.user();
+  //   if (user) {
+  //     setAuthenticatedState('authenticated');
+  //   }
+  // }
+  // async function handleAuthChange(event, session) {
+  //   await fetch('/api/auth', {
+  //     method: 'POST',
+  //     headers: new Headers({ 'Content-Type': 'application/json' }),
+  //     credentials: 'same-origin',
+  //     body: JSON.stringify({ event, session }),
+  //   });
+  // }
   return (
     <>
       <Head>
@@ -68,23 +106,27 @@ const Layout = ({ title, children }) => {
                     </Link>
                   </Typography>
                 </div>
-                <Link href="/login">
-                  <Button
-                    variant="gradient"
-                    size="sm"
-                    className="hidden lg:inline-block">
-                    <span>Log In</span>
-                  </Button>
-                </Link>
-                <Link href="/login">
-                  <Button
-                    variant="gradient"
-                    size="sm"
-                    onClick={logoutClickHandler}
-                    className="hidden lg:inline-block">
-                    <span>Log Out</span>
-                  </Button>
-                </Link>
+                {authenticatedState === 'not-authenticated' ? (
+                  <Link href="/login">
+                    <Button
+                      variant="gradient"
+                      size="sm"
+                      className="hidden lg:inline-block">
+                      <span>Log In</span>
+                    </Button>
+                  </Link>
+                ) : (
+                  <Link href="/login">
+                    <Button
+                      variant="gradient"
+                      size="sm"
+                      onClick={logoutClickHandler}
+                      className="hidden lg:inline-block">
+                      <span>Log Out</span>
+                    </Button>
+                  </Link>
+                )}
+
                 <IconButton
                   variant="text"
                   className="ml-auto h-6 w-6 text-inherit hover:bg-transparent focus:bg-transparent active:bg-transparent lg:hidden"

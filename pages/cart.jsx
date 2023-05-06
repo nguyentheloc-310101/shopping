@@ -5,6 +5,14 @@ import Image from 'next/image';
 import Link from 'next/link';
 import { useRouter } from 'next/router';
 import React, { useContext } from 'react';
+import dynamic from 'next/dynamic';
+import {
+  Button,
+  Card,
+  CardBody,
+  CardFooter,
+  Typography,
+} from '@material-tailwind/react';
 
 export const CartScreen = () => {
   const router = useRouter();
@@ -18,7 +26,7 @@ export const CartScreen = () => {
     dispatch({ type: 'CART_REMOVE_ITEM', payload: item });
   };
 
-  /*Update item when change the quantity or delete item*/
+  /*Update item when change the quantity or delete,add item*/
   const updateCartHandler = async (item, qty) => {
     const quantity = Number(qty);
     // const { data } = await axios.get(`/api/products/${item._id}`);
@@ -30,7 +38,12 @@ export const CartScreen = () => {
       <h1 className="mb-4 text-xl">Shopping Cart</h1>
       {cartItems.length === 0 ? (
         <div>
-          Cart is empty. <Link href="/">Go shopping</Link>
+          Cart is empty.{' '}
+          <Link
+            style={{ color: 'blue' }}
+            href="/">
+            Go shopping
+          </Link>
         </div>
       ) : (
         <div className="grid md:grid-cols-4 md:gap-5">
@@ -92,25 +105,28 @@ export const CartScreen = () => {
             </table>
           </div>
           <div className="card p-5">
-            <ul>
-              <li>
-                <div className="pb-3 text-xl">
+            <Card className="border border-gray-200 rounded-lg shadow mt-0 w-96">
+              <CardBody>
+                <Typography
+                  variant="h5"
+                  color="blue-gray"
+                  className="mb-2">
                   Subtotal ({cartItems.reduce((a, c) => a + c.quantity, 0)}) : $
                   {cartItems.reduce((a, c) => a + c.quantity * c.price, 0)}
-                </div>
-              </li>
-              <li>
-                <button
+                </Typography>
+              </CardBody>
+              <CardFooter className="pt-0">
+                <Button
                   onClick={() => router.push('login?redirect=/shipping')}
-                  className="primary-button w-full">
+                  className=" text-sm">
                   Check Out
-                </button>
-              </li>
-            </ul>
+                </Button>
+              </CardFooter>
+            </Card>
           </div>
         </div>
       )}
     </Layout>
   );
 };
-export default CartScreen;
+export default dynamic(() => Promise.resolve(CartScreen), { ssr: false });

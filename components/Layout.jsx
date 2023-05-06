@@ -1,5 +1,5 @@
 import Head from 'next/head';
-import React, { useContext } from 'react';
+import React, { useContext, useState, useEffect } from 'react';
 
 import Footer from './Footer';
 import { Store } from '@/ultis/Store';
@@ -15,10 +15,15 @@ import Link from 'next/link';
 const Layout = ({ title, children }) => {
   const { state, dispatch } = useContext(Store);
   const { cart } = state;
+  const [cartItemsCount, setCartItemsCount] = useState(0);
+  useEffect(() => {
+    setCartItemsCount(cart.cartItems.reduce((a, c) => a + c.quantity, 0));
+  }, [cart.cartItems]);
+
   /* The List Item of navigation bar*/
   const [openNav, setOpenNav] = React.useState(false);
 
-  React.useEffect(() => {
+  useEffect(() => {
     window.addEventListener(
       'resize',
       () => window.innerWidth >= 960 && setOpenNav(false)
@@ -48,9 +53,9 @@ const Layout = ({ title, children }) => {
                       href="/cart"
                       className="flex items-center">
                       Cart
-                      {cart.cartItems.length > 0 && (
+                      {cartItemsCount > 0 && (
                         <span className="ml-1 rounded-full bg-red-600 px-2 py-1 text-xs font-bold text-white">
-                          {cart.cartItems.reduce((a, c) => a + c.quantity, 0)}
+                          {cartItemsCount}
                         </span>
                       )}
                     </Link>
@@ -110,9 +115,9 @@ const Layout = ({ title, children }) => {
                   href="/cart"
                   className="flex items-center">
                   Cart
-                  {cart.cartItems.length > 0 && (
+                  {cartItemsCount > 0 && (
                     <span className="ml-1 rounded-full bg-red-600 px-2 py-1 text-xs font-bold text-white">
-                      {cart.cartItems.reduce((a, c) => a + c.quantity, 0)}
+                      {cartItemsCount}
                     </span>
                   )}
                 </Link>

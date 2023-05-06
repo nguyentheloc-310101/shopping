@@ -1,14 +1,18 @@
 import '@/styles/globals.css';
 import { StoreProvider } from '@/ultis/Store';
-import { useState, useEffect } from 'react';
-import Link from 'next/link';
+import supabase from '@/ultis/supabaseClient';
 
-import { useRouter } from 'next/router';
+import { SessionContextProvider } from '@supabase/auth-helpers-react';
 
 export default function App({ Component, pageProps }) {
   return (
     <StoreProvider>
-      <Component {...pageProps} />
+      <SessionContextProvider
+        supabaseClient={supabase}
+        initialSession={pageProps.initialSession}>
+        {' '}
+        <Component {...pageProps} />
+      </SessionContextProvider>
     </StoreProvider>
   );
 }

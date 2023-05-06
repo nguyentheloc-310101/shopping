@@ -1,9 +1,11 @@
 import Head from 'next/head';
-import { signOut } from 'next-auth/react';
-import React, { useContext, useState, useEffect } from 'react';
 
+import React, { useContext, useState, useEffect } from 'react';
+import { useSession, useSupabaseClient } from '@supabase/auth-helpers-react';
 import Footer from './Footer';
 import { Store } from '@/ultis/Store';
+import Link from 'next/link';
+import Cookies from 'js-cookie';
 import {
   Navbar,
   MobileNav,
@@ -11,20 +13,25 @@ import {
   Button,
   IconButton,
 } from '@material-tailwind/react';
-import Link from 'next/link';
-import Cookies from 'js-cookie';
-import supabase from '@/ultis/supabaseClient';
-import { useRouter } from 'next/router';
 
 const Layout = ({ title, children }) => {
   const { state, dispatch } = useContext(Store);
   const { cart } = state;
   const [cartItemsCount, setCartItemsCount] = useState(0);
+  const session = useSession();
+  const supabase = useSupabaseClient();
+  async function signOut() {
+    const { error } = await supabase.auth.signOut();
+    if (error) {
+      console.log({ error });
+    }
+  }
   const logoutClickHandler = () => {
     Cookies.remove('cart');
     dispatch({ type: 'CART_RESET' });
-    signOut({ callbackUrl: '/login' });
+    signOut();
   };
+
   useEffect(() => {
     setCartItemsCount(cart.cartItems.reduce((a, c) => a + c.quantity, 0));
   }, [cart.cartItems]);
@@ -40,41 +47,7 @@ const Layout = ({ title, children }) => {
   }, []);
 
   // const router = useRouter();
-  const [authenticatedState, setAuthenticatedState] =
-    useState('not-authenticated');
-  // useEffect(() => {
-  //   const { data: authListener } = supabase.auth.onAuthStateChange(
-  //     async (event, session) => {
-  //       console.log(event, session);
-  //       handleAuthChange(event, session);
-  //       if (event === 'SIGNED_IN') {
-  //         setAuthenticatedState('authenticated');
-  //         router.push('/');
-  //       }
-  //       if (event === 'SIGNED_OUT') {
-  //         setAuthenticatedState('not-authenticated');
-  //       }
-  //     }
-  //   );
-  //   checkUser();
-  //   return () => {
-  //     authListener.unsubscribe();
-  //   };
-  // }, []);
-  // async function checkUser() {
-  //   const user = await supabase.auth.user();
-  //   if (user) {
-  //     setAuthenticatedState('authenticated');
-  //   }
-  // }
-  // async function handleAuthChange(event, session) {
-  //   await fetch('/api/auth', {
-  //     method: 'POST',
-  //     headers: new Headers({ 'Content-Type': 'application/json' }),
-  //     credentials: 'same-origin',
-  //     body: JSON.stringify({ event, session }),
-  //   });
-  // }
+
   return (
     <>
       <Head>
@@ -106,7 +79,7 @@ const Layout = ({ title, children }) => {
                     </Link>
                   </Typography>
                 </div>
-                {authenticatedState === 'not-authenticated' ? (
+                {!session ? (
                   <Link href="/login">
                     <Button
                       variant="gradient"
@@ -119,7 +92,6 @@ const Layout = ({ title, children }) => {
                   <Link href="/login">
                     <Button
                       variant="gradient"
-                      size="sm"
                       onClick={logoutClickHandler}
                       className="hidden lg:inline-block">
                       <span>Log Out</span>

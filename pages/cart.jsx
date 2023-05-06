@@ -1,7 +1,7 @@
 import Layout from '@/components/Layout';
 import { Store } from '@/ultis/Store';
 import { XCircleIcon } from '@heroicons/react/24/solid';
-import Image from 'next/image';
+
 import Link from 'next/link';
 import { useRouter } from 'next/router';
 import React, { useContext } from 'react';
@@ -29,7 +29,7 @@ export const CartScreen = () => {
   /*Update item when change the quantity or delete,add item*/
   const updateCartHandler = async (item, qty) => {
     const quantity = Number(qty);
-    // const { data } = await axios.get(`/api/products/${item._id}`);
+
     dispatch({ type: 'CART_ADD_ITEM', payload: { ...item, quantity } });
     alert('Product updated in the cart');
   };
@@ -66,7 +66,7 @@ export const CartScreen = () => {
                       <Link
                         href={`/product/${item.slug}`}
                         className="flex items-center">
-                        <Image
+                        <img
                           src={item.image}
                           alt={item.name}
                           width={50}
@@ -74,7 +74,7 @@ export const CartScreen = () => {
                           style={{
                             maxWidth: '100%',
                             height: 'auto',
-                          }}></Image>
+                          }}></img>
                         {item.name}
                       </Link>
                     </td>

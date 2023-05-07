@@ -162,7 +162,6 @@ const Layout = ({ title, children }) => {
               </Button>
             </MobileNav>
           </Navbar>
-          <Hero />
         </header>
         <main>{children}</main>
         <Footer />

@@ -1,5 +1,6 @@
 import Collection from '@/components/Collection';
 import FinalBlock from '@/components/FinalBlock';
+import Hero from '@/components/Hero';
 import Layout from '@/components/Layout';
 import ProductItem from '@/components/ProductItem';
 
@@ -42,6 +43,9 @@ export default function Home() {
   };
   return (
     <Layout title="home">
+      <>
+        <Hero />
+      </>
       <div className="flex items-center justify-center">
         <h2 className="mt-10 mb-10 text-2xl font-bold leading-7 text-gray-900 sm:truncate sm:text-3xl sm:tracking-tight">
           Top Trending Product

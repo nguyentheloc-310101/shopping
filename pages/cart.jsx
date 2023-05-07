@@ -5,7 +5,7 @@ import { XCircleIcon } from '@heroicons/react/24/solid';
 import Link from 'next/link';
 import { useRouter } from 'next/router';
 import React, { useContext } from 'react';
-import dynamic from 'next/dynamic';
+
 import {
   Button,
   Card,
@@ -13,7 +13,6 @@ import {
   CardFooter,
   Typography,
 } from '@material-tailwind/react';
-import Image from 'next/image';
 
 export const CartScreen = () => {
   const router = useRouter();
@@ -130,5 +129,5 @@ export const CartScreen = () => {
     </Layout>
   );
 };
-export default dynamic(() => Promise.resolve(CartScreen), { ssr: false });
+export default CartScreen;
 //  dynamic(() => Promise.resolve(CartScreen), { ssr: false });

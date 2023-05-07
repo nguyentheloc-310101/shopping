@@ -13,7 +13,6 @@ import {
   Button,
   IconButton,
 } from '@material-tailwind/react';
-import Hero from './Hero';
 
 const Layout = ({ title, children }) => {
   const { state, dispatch } = useContext(Store);

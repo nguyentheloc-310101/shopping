@@ -13,6 +13,7 @@ import {
   CardFooter,
   Typography,
 } from '@material-tailwind/react';
+import Image from 'next/image';
 
 export const CartScreen = () => {
   const router = useRouter();
@@ -130,3 +131,4 @@ export const CartScreen = () => {
   );
 };
 export default dynamic(() => Promise.resolve(CartScreen), { ssr: false });
+//  dynamic(() => Promise.resolve(CartScreen), { ssr: false });

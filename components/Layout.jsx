@@ -163,8 +163,7 @@ const Layout = ({ title, children }) => {
           </Navbar>
         </header>
         <main>{children}</main>
-
-        <Footer />
+        {session ? <Footer /> : ''}
       </div>
     </>
   );

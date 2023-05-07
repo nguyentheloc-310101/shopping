@@ -163,7 +163,9 @@ const Layout = ({ title, children }) => {
           </Navbar>
         </header>
         <main>{children}</main>
-        <Footer />
+        <div className="mt-5">
+          <Footer />
+        </div>
       </div>
     </>
   );

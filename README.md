@@ -5,7 +5,7 @@ This is a [Next.js](https://nextjs.org/) project bootstrapped with [`create-next
 ## Overview
 This ecommerce website is developed using the following technologies:
 
-* [![React][React.js]][React-url]
+* [![React][React.js]][React-url] is the highly used open-source JavaScript Library.
 * [![Next][Next.js]][Next-url] A popular React framework for building server-rendered and static websites.
 * ![TailwindCSS](https://img.shields.io/badge/tailwindcss-%2338B2AC.svg?style=for-the-badge&logo=tailwind-css&logoColor=white) A utility-first CSS framework for rapidly building responsive and customizable user interfaces.
 * ![Supabase](https://img.shields.io/badge/Supabase-3ECF8E?style=for-the-badge&logo=supabase&logoColor=white) An open-source alternative to Firebase that provides a powerful and scalable backend platform.

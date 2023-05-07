@@ -1,3 +1,5 @@
+import Collection from '@/components/Collection';
+import FinalBlock from '@/components/FinalBlock';
 import Layout from '@/components/Layout';
 import ProductItem from '@/components/ProductItem';
 
@@ -40,17 +42,30 @@ export default function Home() {
   };
   return (
     <Layout title="home">
-      {fetchError && <p>{fetchError}</p>}
-      {productList && (
-        <div className="grid grid-cols-1 gap-4 md:grid-cols-3 lg:grid-cols-4">
-          {productList.map((product) => (
-            <ProductItem
-              product={product}
-              key={product.slug}
-              addToCartHandler={addToCartHandler}></ProductItem>
-          ))}
+      <div className="flex items-center justify-center">
+        <h2 className="mt-10 mb-10 text-2xl font-bold leading-7 text-gray-900 sm:truncate sm:text-3xl sm:tracking-tight">
+          Top Trending Product
+        </h2>
+      </div>
+      <>
+        {fetchError && <p>{fetchError}</p>}
+        {productList && (
+          <div className="grid grid-cols-1 gap-4 md:grid-cols-3 lg:grid-cols-4">
+            {productList.map((product) => (
+              <ProductItem
+                product={product}
+                key={product.slug}
+                addToCartHandler={addToCartHandler}></ProductItem>
+            ))}
+          </div>
+        )}
+        <div className="my-20">
+          <Collection />
         </div>
-      )}
+        <div className="my-20">
+          <FinalBlock />
+        </div>
+      </>
     </Layout>
   );
 }

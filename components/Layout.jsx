@@ -13,6 +13,7 @@ import {
   Button,
   IconButton,
 } from '@material-tailwind/react';
+import Hero from './Hero';
 
 const Layout = ({ title, children }) => {
   const { state, dispatch } = useContext(Store);
@@ -61,7 +62,7 @@ const Layout = ({ title, children }) => {
                 <Link href="/">Shopping</Link>
               </Typography>
               <div className="flex items-center gap-4">
-                <div className="mr-4 hidden lg:block">
+                <div className="mr-4  lg:block">
                   <Typography
                     as="li"
                     variant="small"
@@ -161,9 +162,10 @@ const Layout = ({ title, children }) => {
               </Button>
             </MobileNav>
           </Navbar>
+          <Hero />
         </header>
         <main>{children}</main>
-        {session ? <Footer /> : ''}
+        <Footer />
       </div>
     </>
   );

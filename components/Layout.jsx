@@ -163,7 +163,7 @@ const Layout = ({ title, children }) => {
           </Navbar>
         </header>
         <main>{children}</main>
-        <div className="mt-5">
+        <div className="mt-5 relative">
           <Footer />
         </div>
       </div>

@@ -5,9 +5,10 @@ This is a [Next.js](https://nextjs.org/) project bootstrapped with [`create-next
 ## Overview
 This ecommerce website is developed using the following technologies:
 
-- Next.js: A popular React framework for building server-rendered and static websites.
-- Tailwind CSS: A utility-first CSS framework for rapidly building responsive and customizable user interfaces.
-- Supabase: An open-source alternative to Firebase that provides a powerful and scalable backend platform.
+* [![React][React.js]][React-url]
+* [![Next][Next.js]][Next-url] A popular React framework for building server-rendered and static websites.
+* ![TailwindCSS](https://img.shields.io/badge/tailwindcss-%2338B2AC.svg?style=for-the-badge&logo=tailwind-css&logoColor=white) A utility-first CSS framework for rapidly building responsive and customizable user interfaces.
+* ![Supabase](https://img.shields.io/badge/Supabase-3ECF8E?style=for-the-badge&logo=supabase&logoColor=white) An open-source alternative to Firebase that provides a powerful and scalable backend platform.
 The website allows users to browse and purchase products, manage their shopping cart, and complete orders. It utilizes Supabase for data storage, authentication, and real-time updates.
 
 ## Features
@@ -101,3 +102,8 @@ You can check out [the Next.js GitHub repository](https://github.com/vercel/next
 The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
 
 Check out our [Next.js deployment documentation](https://nextjs.org/docs/deployment) for more details.
+
+[Next.js]: https://img.shields.io/badge/next.js-000000?style=for-the-badge&logo=nextdotjs&logoColor=white
+[Next-url]: https://nextjs.org/
+[React.js]: https://img.shields.io/badge/React-20232A?style=for-the-badge&logo=react&logoColor=61DAFB
+[React-url]: https://reactjs.org/

@@ -31,6 +31,7 @@ const Layout = ({ title, children }) => {
     dispatch({ type: 'CART_RESET' });
     signOut();
   };
+  const logInClickHandler = () => {};
 
   useEffect(() => {
     setCartItemsCount(cart.cartItems.reduce((a, c) => a + c.quantity, 0));
@@ -152,13 +153,16 @@ const Layout = ({ title, children }) => {
                   )}
                 </Link>
               </Typography>
-              <Button
-                variant="gradient"
-                size="sm"
-                fullWidth
-                className="mb-2">
-                <span>Log In</span>
-              </Button>
+              <Link href="/login">
+                <Button
+                  onClick={session ? logoutClickHandler : logInClickHandler}
+                  variant="gradient"
+                  size="sm"
+                  fullWidth
+                  className="mb-2">
+                  <span>{session ? 'Log out' : 'Log in'}</span>
+                </Button>
+              </Link>
             </MobileNav>
           </Navbar>
         </header>

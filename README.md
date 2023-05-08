@@ -7,13 +7,15 @@ This is a [Next.js](https://nextjs.org/) project bootstrapped with [`create-next
 ### Firstly, you need to login to use the App with acount:
 * Username: user@gmail.com
 * Password: 123456
+#### Log in UI
+![App Screenshot](https://github.com/nguyentheloc-310101/shopping/blob/main/public/images/login.png)
 
 ### Screenshot
 ![App Screenshot](public/images/ecommerce.png)
 ### Product Page For Sailing
 ![App Screenshot](https://github.com/nguyentheloc-310101/shopping/blob/main/public/images/product.png)
 ### Cart Section
-![App Screenshot]()
+![App Screenshot](https://github.com/nguyentheloc-310101/shopping/blob/main/public/images/cart.png)
 
 
 

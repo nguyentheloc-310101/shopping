@@ -2,6 +2,10 @@ This is a [Next.js](https://nextjs.org/) project bootstrapped with [`create-next
 
 ![Image](public/images/ecommerce.png)
 
+## Demo
+* _Check out the live demo of my e-commerce web application:_ [https://shopping-ebon.vercel.app/](https://shopping-ebon.vercel.app/)
+
+
 ## Overview
 This ecommerce website is developed using the following technologies:
 

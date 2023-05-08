@@ -23,7 +23,7 @@ This is a [Next.js](https://nextjs.org/) project bootstrapped with [`create-next
 
 
 # Get Started
-##Overall
+## Overall
 This ecommerce website is developed using the following technologies:
 
 * [![React][React.js]][React-url] is the highly used open-source JavaScript Library.
@@ -44,6 +44,8 @@ Before running the ecommerce website, ensure you have the following prerequisite
 - Node.js (v12.0.0 or higher)
 - npm or yarn package manager
 - Supabase account and project
+
+<br/>
 
 ## Getting Started
 Follow the steps below to set up and run the ecommerce website locally:

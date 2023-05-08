@@ -12,7 +12,7 @@ This is a [Next.js](https://nextjs.org/) project bootstrapped with [`create-next
 
 ### Screenshot
 ![App Screenshot](public/images/ecommerce.png)
-### Product Page For Sailing
+### Product Page
 ![App Screenshot](https://github.com/nguyentheloc-310101/shopping/blob/main/public/images/product.png)
 ### Cart Section
 ![App Screenshot](https://github.com/nguyentheloc-310101/shopping/blob/main/public/images/cart.png)

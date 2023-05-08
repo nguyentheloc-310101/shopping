@@ -1,6 +1,9 @@
+# Outerity App | E-commerce Web App
+In this project, we will build a full-stack e-commerce web application using the Next.js framework, TailwindCSS for styling, and Supabase as the backend. The application will have the following features:
+* Product catalog 
+* Shopping cart and checkout 
+
 This is a [Next.js](https://nextjs.org/) project bootstrapped with [`create-next-app`](https://github.com/vercel/next.js/tree/canary/packages/create-next-app).
-
-
 
 ## Demo
 * _Check out the live demo of my e-commerce web application:_ [https://shopping-ebon.vercel.app/](https://shopping-ebon.vercel.app/).

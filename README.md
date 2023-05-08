@@ -22,7 +22,8 @@ This is a [Next.js](https://nextjs.org/) project bootstrapped with [`create-next
 
 
 
-## Overview
+# Get Started
+##Overall
 This ecommerce website is developed using the following technologies:
 
 * [![React][React.js]][React-url] is the highly used open-source JavaScript Library.

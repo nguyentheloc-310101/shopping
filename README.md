@@ -4,7 +4,7 @@ This is a [Next.js](https://nextjs.org/) project bootstrapped with [`create-next
 
 ## Demo
 * _Check out the live demo of my e-commerce web application:_ [https://shopping-ebon.vercel.app/](https://shopping-ebon.vercel.app/).
-### Firstly, you need to login to use the App with acount:
+### You need to login to use the App with verificated account :
 * Username: user@gmail.com
 * Password: 123456
 #### Log in UI

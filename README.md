@@ -1,20 +1,20 @@
 This is a [Next.js](https://nextjs.org/) project bootstrapped with [`create-next-app`](https://github.com/vercel/next.js/tree/canary/packages/create-next-app).
 
-![Image](public/images/ecommerce.png)
+
 
 ## Demo
 * _Check out the live demo of my e-commerce web application:_ [https://shopping-ebon.vercel.app/](https://shopping-ebon.vercel.app/)
+###Firstly, you need to login to use the App with acount:
+email: user@gmail.com
+password: 123456
 
 ###Screenshot
-![App Screenshot](https://github.com/TuongLL/outerity_clone/blob/main/assets/catalog.jpg)
-### Product Detail
-![App Screenshot](https://github.com/TuongLL/outerity_clone/blob/main/assets/detail.jpg)
-### Checkout
-![App Screenshot](https://github.com/TuongLL/outerity_clone/blob/main/assets/checkout.jpg)
-### Admin Product
-![App Screenshot](https://github.com/TuongLL/outerity_clone/blob/main/assets/admin_product.jpg)
-### Admin Order
-![App Screenshot](https://github.com/TuongLL/outerity_clone/blob/main/assets/admin_order.jpg)
+![App Screenshot](public/images/ecommerce.png)
+### Product Page For Sailing
+![App Screenshot]()
+### Cart Section
+![App Screenshot]()
+
 
 
 ## Overview

@@ -22,7 +22,6 @@ This is a [Next.js](https://nextjs.org/) project bootstrapped with [`create-next
 
 
 
-# Get Started
 ## Overall
 This ecommerce website is developed using the following technologies:
 
@@ -45,7 +44,7 @@ Before running the ecommerce website, ensure you have the following prerequisite
 - npm or yarn package manager
 - Supabase account and project
 
-<br/>
+&nbsp;
 
 ## Getting Started
 Follow the steps below to set up and run the ecommerce website locally:

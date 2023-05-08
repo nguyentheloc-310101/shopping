@@ -5,6 +5,17 @@ This is a [Next.js](https://nextjs.org/) project bootstrapped with [`create-next
 ## Demo
 * _Check out the live demo of my e-commerce web application:_ [https://shopping-ebon.vercel.app/](https://shopping-ebon.vercel.app/)
 
+###Screenshot
+![App Screenshot](https://github.com/TuongLL/outerity_clone/blob/main/assets/catalog.jpg)
+### Product Detail
+![App Screenshot](https://github.com/TuongLL/outerity_clone/blob/main/assets/detail.jpg)
+### Checkout
+![App Screenshot](https://github.com/TuongLL/outerity_clone/blob/main/assets/checkout.jpg)
+### Admin Product
+![App Screenshot](https://github.com/TuongLL/outerity_clone/blob/main/assets/admin_product.jpg)
+### Admin Order
+![App Screenshot](https://github.com/TuongLL/outerity_clone/blob/main/assets/admin_order.jpg)
+
 
 ## Overview
 This ecommerce website is developed using the following technologies:

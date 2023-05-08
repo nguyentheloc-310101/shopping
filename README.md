@@ -46,7 +46,7 @@ Before running the ecommerce website, ensure you have the following prerequisite
 
 &nbsp;
 
-## Getting Started
+# Getting Started
 Follow the steps below to set up and run the ecommerce website locally:
 
 ### Clone the repository:

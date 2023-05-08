@@ -4,11 +4,11 @@ This is a [Next.js](https://nextjs.org/) project bootstrapped with [`create-next
 
 ## Demo
 * _Check out the live demo of my e-commerce web application:_ [https://shopping-ebon.vercel.app/](https://shopping-ebon.vercel.app/).
-###Firstly, you need to login to use the App with acount:
+### Firstly, you need to login to use the App with acount:
 email: user@gmail.com
 password: 123456
 
-###Screenshot
+### Screenshot
 ![App Screenshot](public/images/ecommerce.png)
 ### Product Page For Sailing
 ![App Screenshot]()

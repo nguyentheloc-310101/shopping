@@ -55,6 +55,9 @@ Follow the steps below to set up and run the ecommerce website locally:
 git clone https://github.com/nguyentheloc-310101/shopping.git
 cd shopping
 ```
+```bash
+cd shopping
+```
 
 ### Install dependencies:
 ```bash
